@@ -16,10 +16,6 @@ function dd (... $mixins) {
     die;
 }
 
-function replaceParentClassName ($className, $parentClassName) {
-
-}
-
 function classNameToNameTableEntity (string $className) {
     $parents = class_parents($className);
     $getClassNameWithoundNamespace = function ($className) {
