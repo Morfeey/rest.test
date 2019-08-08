@@ -137,7 +137,7 @@ class MySQLAdapter implements IAdapter
         if (!is_null($this->tableName)) {
             $result = $this->tableName;
         }else if (!is_null($this->entityClassName)) {
-            $result = classNameToNameTableModel($this->entityClassName);
+            $result = classNameToNameTableEntity($this->entityClassName);
         }
 
         return $result;
