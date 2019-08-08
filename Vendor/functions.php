@@ -45,20 +45,3 @@ function classNameToNameTableEntity (string $className) {
     }
     return $result;
 }
-
-function classNameToNameTableModel (string $className) {
-    $getClassNameWithountNamespace = function () use ($className) {
-        $explode = explode('\\', $className);
-        $result = array_pop($explode);
-        return $result;
-    };
-
-    $modelName = $getClassNameWithountNamespace();
-    $modelStringValue = (new StringValue($modelName))->toSnakeCase();
-    $lastChar = array_pop($modelStringValue->getChars());
-    $result = $modelStringValue->getResult();
-    if ($lastChar->toLow()->getResult() !== "s") {
-        $result .= "s";
-    }
-    return $result;
-}
