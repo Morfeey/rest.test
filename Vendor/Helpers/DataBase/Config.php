@@ -19,7 +19,7 @@ class Config extends Configuration
      * @return ConnectItem
      * @throws \Exception
      */
-    public function getConnect ():ConnectItem {
+    public function getConnect (): ConnectItem {
         $connections = $this->fullConfig['connections'];
         $name =  $this->connectName;
         if (key_exists($name, $connections)) {

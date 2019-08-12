@@ -34,6 +34,8 @@ class Autoloader implements IAutoload
     /**
      * @param Recursion| Recursion::isOn $recursion
      * @param Directory ...$directories
+     * @return self
+     *
      */
     public function addDirectories(Recursion $recursion = null, Directory ... $directories)
     {

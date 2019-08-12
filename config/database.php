@@ -6,8 +6,9 @@ return [
     ],
     "connections" => [
         "defaultMySQL" => [
-            "dataBase" => "test",
-            "userName" => "root"
+            "dataBase" => "f0327414_rest",
+            "userName" => "f0327414_rest",
+            "password" => "UexKpYm7"
         ]
     ]
 ];
