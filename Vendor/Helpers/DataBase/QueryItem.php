@@ -37,7 +37,6 @@ class PrepareQueryItem implements IInnerEssence
     public function __construct()
     {
         $this->params = [];
-        $this->result = null;
         $this->from = null;
     }
 }
