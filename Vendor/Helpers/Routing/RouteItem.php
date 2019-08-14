@@ -27,7 +27,7 @@ class RouteItem
             $result = function () {
                 return call_user_func($this->callBack, $this->params);
             };
-        }else if (!is_null($this->controller) && $this->method) {
+        }else if (!is_null($this->controller) && !is_null($this->method)) {
             $result = function () {
                 return call_user_func_array([$this->controller, $this->method], $this->params);
             };

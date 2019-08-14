@@ -3,6 +3,7 @@
 use App\Controllers\MainController;
 use App\Controllers\OrdersController;
 use App\Controllers\ProductsController;
+use App\Controllers\TestController;
 use Helpers\Routing\Route;
 
 return [
@@ -43,6 +44,10 @@ return [
             Route::get('get_all')
                 ->setController(ProductsController::class)
                 ->setMethod('getAll')
+        ]),
+
+        Route::group('test', [
+            Route::get('/')->setController(TestController::class)->setMethod('index')
         ])
     ]
 ];

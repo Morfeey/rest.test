@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c83425d-9dc7-4e31-bc97-405493bfa22a" name="Default Changelist" comment="Updated">
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/QueryBuilderNew.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/QueryItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="0c83425d-9dc7-4e31-bc97-405493bfa22a" name="Default Changelist" comment="last">
+      <change afterPath="$PROJECT_DIR$/App/Controllers/TestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/Collections/IKeyValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/Collections/PairKeyValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/QueryEntities/WhereItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/QueryEntities/WhereParts/IWhereType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/QueryEntities/WhereParts/WhereBetween.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/QueryEntities/WhereParts/WhereIn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/QueryEntities/WhereParts/WhereType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/QueryItem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Builder/SQLBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/Query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Query/QueryBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vendor/Helpers/Autoloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/Helpers/Autoloader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/Helpers/DataBase/ActiveRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/Helpers/DataBase/DataBaseException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/Helpers/DataBase/QueryBuilderNew.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/Helpers/DataBase/QueryItem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/Helpers/Routing/RouteItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/Helpers/Routing/RouteItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +69,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -74,20 +84,22 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\rest.test\config" />
-      <recent name="C:\OSPanel\domains\rest.test\Vendor\Helpers" />
-      <recent name="C:\OSPanel\domains\rest.test\Vendor" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\rest.test\Vendor\Helpers\DataBase\Query\Builder\QueryEntities\WhereParts" />
       <recent name="C:\OSPanel\domains\rest.test\Vendor\Helpers\Architecture\Adapters" />
       <recent name="C:\OSPanel\domains\rest.test" />
       <recent name="C:\OSPanel\domains\rest.test\App" />
       <recent name="C:\OSPanel\domains\rest.test\Vendor\Helpers" />
-      <recent name="C:\OSPanel\domains\rest.test\public\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\rest.test\Vendor\Helpers\DataBase\Query" />
+      <recent name="C:\OSPanel\domains\rest.test\config" />
+      <recent name="C:\OSPanel\domains\rest.test\Vendor\Helpers" />
+      <recent name="C:\OSPanel\domains\rest.test\Vendor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,7 +130,10 @@
       <workItem from="1565612482501" duration="4713000" />
       <workItem from="1565617833522" duration="61000" />
       <workItem from="1565617909991" duration="305000" />
-      <workItem from="1565618730197" duration="2334000" />
+      <workItem from="1565618730197" duration="3272000" />
+      <workItem from="1565675750233" duration="759000" />
+      <workItem from="1565677592039" duration="26223000" />
+      <workItem from="1565762162780" duration="3108000" />
     </task>
     <task id="LOCAL-00001" summary="Upload">
       <created>1565229712339</created>
@@ -141,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1565230679887</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="last">
+      <created>1565621103751</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565621103751</updated>
+    </task>
+    <task id="LOCAL-00005" summary="last">
+      <created>1565622034091</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565622034091</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +193,7 @@
     <MESSAGE value="Upload" />
     <MESSAGE value="Update" />
     <MESSAGE value="Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated" />
+    <MESSAGE value="last" />
+    <option name="LAST_COMMIT_MESSAGE" value="last" />
   </component>
 </project>
