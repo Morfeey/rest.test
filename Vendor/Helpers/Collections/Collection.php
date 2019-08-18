@@ -4,7 +4,7 @@
 namespace Helpers\Collections;
 
 
-abstract class Collection implements \IteratorAggregate, \JsonSerializable, \Countable
+abstract class Collection implements \IteratorAggregate, \JsonSerializable, \Countable, \ArrayAccess
 {
     protected $values;
 
@@ -31,5 +31,28 @@ abstract class Collection implements \IteratorAggregate, \JsonSerializable, \Cou
     public function __toString()
     {
         return $this->jsonSerialize();
+    }
+
+
+    public function offsetExists($offset)
+    {
+        return key_exists($offset, $this->values);
+    }
+
+    public function offsetGet($offset)
+    {
+        return $this->values[$offset];
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->values[$offset] = $value;
+        return $this;
+    }
+
+    public function offsetUnset($offset)
+    {
+        unset($this->values[$offset]);
+        return $this;
     }
 }
