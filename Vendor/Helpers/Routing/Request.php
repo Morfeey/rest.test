@@ -58,7 +58,7 @@ class Request
     {
         $this->requestURI = (new PathHandler($_SERVER['REDIRECT_URL']))->addLastSlash()->getResult();
         $this->type = $_SERVER['REQUEST_METHOD'];
-        $this->params = $_REQUEST;
+        $this->params = ($this->type === "POST") ? $_POST : ($this->type === "GET") ? $_GET : null;
         $this->params = (is_null($this->params)) ? [] : $this->params;
         $this->headers = (new Headers())->getAll();
         $this->status = $_SERVER['REDIRECT_STATUS'];

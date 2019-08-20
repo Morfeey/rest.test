@@ -1,0 +1,17 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Helpers\\": "Vendor/",
+      "App\\": "App/"
+    },
+    "psr-0": {
+      "Helpers": "Vendor/Helpers/",
+      "App": ["Vendor/Helpers/", "App/"]
+    },
+    "classmap": ["Vendor/Helpers/", "App/"],
+    "files": ["Vendor/functions.php"]
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}

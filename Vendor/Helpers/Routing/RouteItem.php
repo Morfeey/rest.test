@@ -29,7 +29,10 @@ class RouteItem
             };
         }else if (!is_null($this->controller) && !is_null($this->method)) {
             $result = function () {
-                return call_user_func_array([$this->controller, $this->method], $this->params);
+                $controller = $this->controller;
+                $method = $this->method;
+                $params = $this->params;
+                return (new $controller())->$method($params);
             };
         }
 
