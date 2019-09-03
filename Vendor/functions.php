@@ -1,6 +1,9 @@
 <?php
 
+use duncan3dc\Laravel\Blade;
+use duncan3dc\Laravel\BladeInstance;
 use Helpers\StringValue;
+use Helpers\Path\Directory;
 
 /**
  * Dump and die
@@ -57,4 +60,28 @@ function getRealIp()
     }
 
     return $ip;
+}
+
+function publicDirectory (string ... $childPath) : Directory {
+    $publicPath = (new Directory())->addChild('public');
+
+    foreach ($childPath as $item) {
+        $publicPath->addChild($item);
+    }
+
+    return $publicPath;
+}
+
+function publicPath (string ...$childPath) {
+    return publicDirectory(... $childPath)->getResult();
+}
+
+
+
+function view (string $viewName, ...$param) {
+    $pathViews = (new Directory())->addChild('resources', 'Views')->getResult();
+    $pathCachedViews = (new Directory())->addChild('resources', 'Cache', 'Views')->getResult();
+    $blade = new BladeInstance($pathViews, $pathCachedViews);
+
+    return $blade->render($viewName, ...$param);
 }

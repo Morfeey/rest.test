@@ -49,7 +49,7 @@ class MySQLAdapter implements IAdapter
     {
         $this->setQueryBuilderStartCondition();
         foreach ($this->entities as $entity) {
-            $increment = $entity->getAttribute($entity::$incrementName);
+            $increment = $entity->__get($entity::$incrementName);
             if (!is_null($increment)) {
                 $attributes = $entity->getAttributes();
                 unset($attributes[$entity::$incrementName]);

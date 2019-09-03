@@ -8,5 +8,5 @@ use Helpers\Architecture\Entity;
 
 class Product extends Entity
 {
-    public static $fillable =['name', 'price'];
+    public static $fillable = ['name', 'price'];
 }

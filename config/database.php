@@ -6,9 +6,10 @@ return [
     ],
     "connections" => [
         "defaultMySQL" => [
-            "dataBase" => "f0327414_rest",
-            "userName" => "f0327414_rest",
-            "password" => "UexKpYm7"
+            "host" => "sql308.qlihost.ru",
+            "dataBase" => "",
+            "userName" => "",
+            "password" => ""
         ]
     ]
 ];

@@ -47,7 +47,8 @@ return [
         ]),
 
         Route::group('test', [
-            Route::get('/')->setController(TestController::class)->setMethod('index')
+            Route::get('/')->setController(TestController::class)->setMethod('index'),
+            Route::get('test')->setController(TestController::class)->setMethod('test')
         ])
     ]
 ];

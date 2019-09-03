@@ -36,16 +36,20 @@ class Router
         $temp = [];
 
         foreach ($routesList as $item) {
-            if ($item->getRoute() === $currentRequest->getRequestURI() && $item->getType() === $currentRequest->getType()) {
-                $item->setParams(...$currentRequest->getParams());
-                $callBack = call_user_func($item->getClosure());
+            try {
+                if ($item->getRoute() === $currentRequest->getRequestURI() && $item->getType() === $currentRequest->getType()) {
+                    $item->setParams(...$currentRequest->getParams());
+                    $callBack = call_user_func($item->getClosure());
 
-                if ($Jsonable) {
-                    if (is_array($callBack) || is_object($callBack)) {
-                        $callBack = json_encode($callBack, JSON_PRETTY_PRINT);
+                    if ($Jsonable) {
+                        if (is_array($callBack) || is_object($callBack)) {
+                            $callBack = json_encode($callBack, JSON_PRETTY_PRINT);
+                        }
                     }
+                    return print $callBack;
                 }
-                return print $callBack;
+            }catch (\Exception $exception) {
+                dd($exception);
             }
         }
         if (count($temp) === 0) {

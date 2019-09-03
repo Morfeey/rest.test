@@ -32,8 +32,7 @@ abstract class Collection implements \IteratorAggregate, \JsonSerializable, \Cou
     {
         return $this->jsonSerialize();
     }
-
-
+    
     public function offsetExists($offset)
     {
         return key_exists($offset, $this->values);

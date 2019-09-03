@@ -10,22 +10,20 @@ class Entity
         return classNameToNameTableEntity($className);
     }
 
+    private $attributes = [];
+
     public static $incrementName = "id";
 
     public static $fillable = [];
 
     public function getAttribute(string $fillableKey)
     {
-        $result = (isset($this->$fillableKey)) ? $this->$fillableKey : null;
-        return $result;
+        return $this->__get($fillableKey);
     }
 
     public function setAttribute(string $fillableKey, $value)
     {
-        if (in_array($fillableKey, $this::$fillable) || $fillableKey === $this::$incrementName) {
-            $this->$fillableKey = $value;
-        }
-        return $this;
+        return $this->__set($fillableKey, $value);
     }
 
     public function setAttributes (array $params) {
@@ -37,14 +35,37 @@ class Entity
 
     public function getAttributes()
     {
-        $result = [];
-        $attributes = get_object_vars($this);
-        foreach ($attributes as $key => $value) {
-            if (in_array($key, $this::$fillable) || $key === $this::$incrementName) {
-                $result[$key] = $value;
-            }
+        return $this->attributes;
+    }
+
+    public function __set($name, $value)
+    {
+        if (in_array($name, $this::$fillable) || $name === $this::$incrementName) {
+            $this->$name = $value;
+            $this->attributes[$name] = $value;
+        }
+        return $this;
+    }
+
+    public function __get($name)
+    {
+        $result = null;
+        if (in_array($name, $this->attributes)) {
+            $result = $this->attributes[$name];
         }
         return $result;
+    }
+
+    public function __isset($name)
+    {
+        return in_array($name, $this->attributes);
+    }
+
+    public function __unset($name)
+    {
+        unset($this->$name);
+        unset($this->attributes[$name]);
+        return $this;
     }
 
 }

@@ -5,21 +5,17 @@ namespace App\Controllers;
 
 
 use Helpers\Architecture\Controller;
-use Helpers\DataBase\Query\Builder\QueryEntities\WhereItem;
-use Helpers\DataBase\Query\Builder\QueryEntities\WhereParts\WhereBetween;
-use Helpers\DataBase\Query\QueryBuilder;
+use Helpers\Path\Directory;
 
 class TestController extends Controller
 {
     public function index () {
 
-        dd(
-            (new WhereItem())
-                ->setKey('value')
-                ->setBetweenParams(WhereBetween::notBetween(3, 10))
-                ->getSQL()
-        );
+        $templateFile  =   Directory::getDocumentRoot() . "/public/vue-spa/index.html";
+        return file_get_contents($templateFile);
+    }
 
-        return "test page";
+    public function test () {
+        return view('home');
     }
 }
